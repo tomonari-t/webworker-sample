@@ -9,6 +9,9 @@ window.onload = () => {
     h1.innerHTML = e.data;
   }, false);
 
+  // listhen worker error
+  worker.addEventListener('error', (e) => console.error(e));
+
   setTimeout(() => {
     worker.postMessage('hello world');
   }, 1000);
